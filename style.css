@@ -1,3 +1,16 @@
+:root {
+  --color-white: hsl(0 0% 100%);
+  --color-grey-700: hsl(0 0% 20%);
+  --color-grey-800: hsl(0 0% 12%);
+  --color-grey-900: hsl(0 0% 8%);
+  --color-accent: hsl(170 55% 50%);
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/InterVariable.ttf") format("truetype");
+}
+
 html {
   box-sizing: border-box;
 }
@@ -8,6 +21,113 @@ html {
   box-sizing: inherit;
 }
 
-.body {
+body {
   margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-grey-900);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+@media screen and (max-width: 354px) {
+  main {
+    padding: 0.75rem;
+  }
+}
+
+section {
+  max-inline-size: 385px;
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.75rem;
+  padding: clamp(1.5rem, 6.4vw, 2.5rem);
+  background-color: var(--color-grey-800);
+  border-radius: 1rem;
+}
+
+img {
+  max-inline-size: 88px;
+  block-size: auto;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+
+p.location {
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-accent);
+}
+
+p.bio {
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-align: center;
+  text-wrap-style: balance;
+  color: var(--color-white);
+}
+
+@media screen and (max-width: 354px) {
+  p.bio {
+    line-height: 1.5;
+  }
+}
+
+nav {
+  inline-size: 100%;
+  max-inline-size: 305px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+li {
+  block-size: 45px;
+}
+
+a {
+  display: block;
+  text-align: center;
+  line-height: 45px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-white);
+  background-color: var(--color-grey-700);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.1s ease-out;
+}
+
+a:hover {
+  color: var(--color-grey-900);
+  background-color: var(--color-accent);
 }
